@@ -1,0 +1,1 @@
+The Sitemap Protocol is an easy way for webmasters to inform search engines about pages on their sites available for crawling. It is supported by the major search engines such as Google, but also by data-focused search engines like Sindice. Sitemap4rdf is a command-line tool that generates sitemap.xml files for web sites that publish Linked Data from a SPARQL endpoint.
