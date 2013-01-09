@@ -3,7 +3,6 @@
   <groupId>es.upm.fi.dia.oeg.sitemap4rdf</groupId>
   <artifactId>sitemap4rdf-master</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <!-- Aquí añado las dependencias-->
   <dependencies>
   	<dependency>
        <groupId>com.hp.hpl.jena</groupId>
@@ -15,14 +14,11 @@
 		<artifactId>commons-cli</artifactId>
 		<version>1.2</version>
 	</dependency>
-	<!-- Jena with sources -->
 	<dependency>
       <groupId>com.hp.hpl.jena</groupId>
       <artifactId>jena</artifactId>
       <version>2.6.4</version>
     </dependency>
-
-    <!-- slf4j -->
   	<dependency>
   		<groupId>org.slf4j</groupId>
   		<artifactId>slf4j-api</artifactId>
@@ -41,7 +37,6 @@
 		</dependency>	
   </dependencies>
   <build>
-  	<!-- Aquí indico el directorio donde se encuentra el código -->
     <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
@@ -52,7 +47,6 @@
           <target>1.6</target>
         </configuration>
       </plugin>
-      <!--  Este plugin lo añado para señalar cuál es mi Main Class-->
       <plugin>
       	<groupId>org.codehaus.mojo</groupId>
       	<artifactId>exec-maven-plugin</artifactId>
@@ -65,10 +59,6 @@
       			</goals>
       			<configuration>
       				<mainClass>es.upm.fi.dia.oeg.sitemap4rdf.Generator</mainClass>
-      				<!-- arguments-->
-      					<!-- argument>myArg1</argument-->
-      					<!-- argument>myArg2</argument-->
-      				<!-- /arguments-->
       			</configuration>
       		</execution>
       	</executions>
