@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <title>sitemap4rdf &#8211; Automatic generation of sitemap.xml files for rdf</title>
+<style type="text/css">
+body { background: white; color: black; font-family: sans-serif; line-height: 1.4em; padding: 2.5em 3em; margin: 0; }
+:link { color: #00c; }
+:visited { color: #609; }
+a:link img { border: none; }
+a:visited img { border: none; }
+h1, h2, h3 { background: white; color: #800; }
+h1 { font: 320% sans-serif; margin: 0; }
+h2 { clear: both; font: 140% sans-serif; margin: 1.5em 0 -0.5em 0; }
+h3 { font: 120% sans-serif; margin: 1.5em 0 -0.5em 0; }
+h4 { font: bold 100% sans-serif; }
+h5 { font: italic 100% sans-serif; }
+h6 { font: small-caps 100% sans-serif; }
+.hide { display: none; }
+pre { background: #fff6bb; font-family: monospace; line-height: 1.2em; padding: 1em 2em; }
+dt { font-weight: bold; margin-top: 0; margin-bottom: 0; }
+dd { margin-top: 0; margin-bottom: 0; }
+code, tt { font-family: monospace; }
+ul.toc { list-style-type: none; }
+ol.toc li a { text-decoration: none; }
+.note { color: red; }
+#header { border-bottom: 1px solid #ccc; }
+#logo { float: right; }
+#authors { clear: right; float: right; font-size: 80%; text-align: right; }
+#content { clear: both; margin: 2em auto 0 0; text-align: justify }
+#download, #demo { float: left; font-family: sans-serif; margin: 1em 0 1.5em; text-align: center; width: 100%; }
+#download h2, #demo h2 { font-size: 125%; margin: 1.5em 0 -0.2em 0; }
+#download small, #demo small { color: #888; font-size: 80%; }
+#footer { border-top: 1px solid #ccc; color: #aaa; margin: 2em 0 0; }
+
+@media Print {
+* { font-size: 92%; }
+body { padding: 0; line-height: 1.2em; }
+#content { margin: 0; width: 100%; }
+}
+@media Aural {
+h1 { stress: 20; richness: 90; }
+h2 { stress: 20; richness: 90; }
+h3 { stress: 20; richness: 90; }
+.hide { speak: none; }
+dt { pause-before: 20%; }
+pre { speak-punctuation: code; }
+}
+.Stil1 {color: #FF0000}
+</style>
+</head>
+<body>
+
+<div id="logo">
+  <a href="http://www.isoco.com/"><img src="img/isoco.jpg" width="216" alt="iSOCO logo" /></a>
+  <a href="http://www.deri.ie/"><img src="img/deri.png" alt="DERI Logo" /></a>
+  <a href="http://www.oeg-upm.net/"><img src="img/oeg.png" alt="Ontology Engineering Group Logo" /></a>
+</div>
+
+<div id="header">
+  <h1>sitemap4rdf</h1>
+  <div id="tagline">Generate a <tt>sitemap.xml</tt> file from a SPARQL endpoint</div>
+</div>
+
+<div id="authors">
+  <a href="http://richard.cyganiak.de/">Richard Cyganiak</a><br/>
+  <a href="http://boris.villazon.terrazas.name/">Boris Villazon-Terrazas</a><br/>
+  <a href="http://www.isoco.com/">Almudena González Guimeráns</a>
+</div>
+
+<div id="content">
+<br/>
+<p>The <strong><a href="http://sitemaps.org/">Sitemap Protocol</a></strong> is an easy way for webmasters to <strong>inform search engines about pages on their sites</strong> available for crawling. It is supported by the major search engines such as Google, but also by <strong>data-focused search engines</strong> like <a href="http://sindice.com/">Sindice</a>. Sitemap4rdf is a </strong>command-line tool</strong> that generates <tt>sitemap.xml</tt> files for web sites that publish <strong><a href="http://linkeddata.org/">Linked Data</a> from a SPARQL endpoint</strong>.</p>
+</p>
+
+<div id="download">
+  <h2><a href="http://sitemap4rdf.googlecode.com/files/sitemap4rdf_bin_0.2.1.zip">Download sitemap4rdf</a></h2>
+  <small>v0.2.1 (alpha), released 2010-08-27</small>
+</div>
+
+<h2 id="news">News</h2>
+
+<ul>
+  <li><strong>2010-08-27: Version 0.2.1 released.</strong> This version provides more improvements to the command line options, and updates some funcionalities.</li>
+  <li><strong>2010-08-17: Version 0.2.0 released.</strong> This version provides some improvements to the command line options.</li>
+  <li><strong>2010-08-10: Version 0.1.0 released.</strong> First alpha version.</li>  
+</ul>
+
+<!--
+<h2 id="contents">Contents</h2>
+<ol class="toc">
+  <li><a href="#about">About sitemap4rdf</a></li>
+  <li><a href="#quickstart">Quick start</a></li>
+  <li><a href="#configurationfile">Working with the configuration file</a> </li>
+  <li><a href="#license">License</a> </li>  
+  <li><a href="#support">Support and feedback</a> </li>
+  <li><a href="#development">Source code and development</a> </li>  
+</ol>
+-->
+
+<h2 id="about">About sitemap4rdf</h2>
+
+<p>Linked Data is a method of publishing machine-readable data on the Web using the <a href="http://en.wikipedia.org/wiki/Resource_Description_Framework">RDF</a> technology stack. Data search engines and other data consumers often want a local copy of such datasets for performance reasons. This often requires crawling the entire site, an expensive, fragile and unpredicatable process.</p>
+
+<p>Website crawling can be made more efficient and predictable by using the <strong><a href="http://sitemaps.org/">Sitemap Protocol</a></strong>, originally developed by Google and now supported by all major search engines, as well as data search engines such as <a href="http://sindice.com/">Sindice</a>. It consists of a <tt>sitemap.xml</tt> file that is usually placed in the website root directory and contains a list of all the URLs to be crawled.</p>
+
+<p>Sitemap4rdf is a command-line tool that generates <tt>sitemap.xml</tt> files for Linked Data sites that have a SPARQL endpoint. Sitemap4rdf queries the endpoint to retrieve a list of all URLs, and generates the <tt>sitemap.xml</tt>, which then must be uploaded to the site.</p>
+
+<p>Features include support for <strong>Sitemap compression</strong>, and support for <strong>Sitemap splitting and index files</strong> for large sites.
+
+<h2 id="quickstart">Quick start</h2>
+
+<p>You need:</p>
+<ul>
+  <li><strong>Java 1.5</strong> or newer on the path (check with
+    <tt>java -version</tt> if you're not sure),</li>
+</ul>
+
+<p>What to do:</p>
+<ol>
+  <li><p><strong><a href="#download">Download</a> and extract the
+    archive</strong> to a suitable location.</p></li>
+  <li><p><strong>Run sitemap4rdf from the command line</strong>, specifying your <strong>SPARQL endpoint</strong> and the <strong>prefix of the URLs</strong> to include in the Sitemap:</p>
+    <pre>sitemap4rdf http://example.com/sparql http://example.com/resource/</pre>
+    <p>(Use <tt>./sitemap4rdf</tt> on Linux or OS X.) This generates one or more <tt>sitemap*.xml</tt> files in the current directory.</p></li>
+  <li><p>Optionally, study the documentation below for further <a href="#options">configuration options</a>, or put all your configuration into a <a href="#configurationfile">configuration file</a>.</p></li>
+  <li><p><strong>Upload the generated Sitemap files</strong> to your website. They should be in the root directory, e.g., <tt>http://example.com/sitemap.xml</tt>.</p></li>
+  <li><p>Optionally, <strong>link the Sitemap files in <tt>robots.txt</tt></strong>.
+    This will ensure that compatible web crawlers will discover your Sitemap automatically.</p>
+    <p>If your site doesn't yet have a <tt>robots.txt</tt> file in the root directory, create it.
+    Then add the following line:</p>
+    <pre>Sitemap: http://<em>yoursite.com</em>/sitemap.xml</pre>
+    <p>Or, for large sites where sitemap4rdf splits the Sitemap into multiple files:</p>
+    <pre>Sitemap: http://<em>yoursite.com</em>/sitemap_index.xml</pre>
+  </li>
+  <li><p><strong>Submit your Sitemap</strong> to search engines. For further information, see <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=183669">Sitemap submission for Google</a> and <a href="http://sindice.com/main/submit">Sindice's Sitemap submission form</a>.</p></li>
+</ol>
+
+<h2 id="options">Configuration options</h2>
+
+<p>Run the <tt>sitemap4rdf</tt> command without paramters for a full list of configuration options.</p>
+
+<p>Explanations of the individual options can be found in the <a href="#configurationfile">example configuration file</a> in the next section.</p>
+
+<h2 id="configurationfile">Working with configuration files</h2>
+<p>It is possible to set all the arguments and parameters in a configuration file, and invoke the tool like this:</p>
+<pre>
+sitemap4rdf --config config.xml
+</pre>
+<p>Here is an example configuration file:</p>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Sitemap4rdf sparqlEndpoint="http://geo.linkeddata.es/sparql" uriPrefix="http://geo.linkeddata.es/"&gt;
+    &lt;!-- sparqlEndpoint is a SPARQL endpoint URL.
+         uriPrefix is the common URL prefix shared by all URLs on the site; only matching
+         URLs will be included in the Sitemap --&gt;
+
+    &lt;!-- The date of last modification of the site. This date should be in W3C Datetime format. 
+         This format allows you to omit the time portion, if desired, and use YYYY-MM-DD. --&gt;
+    &lt;Param name="lastmod" value="2010-08-08"/&gt;    
+
+    &lt;!-- How frequently the page is likely to change. This value provides general information to search engines 
+         and may not correlate exactly to how often they crawl the page. Possible values:
+         always, hourly, daily, weekly, monthly, yearly, never --&gt;
+    &lt;Param name="changefreq" value="monthly"/&gt; 
+
+    &lt;!-- The base location on the Sitemap files, needed when a sitemap_index.xml is being created --&gt;
+    &lt;Param name="siteroot" value="http://geo.linkeddata.es/"/&gt;    
+
+    &lt;!-- output directory --&gt;
+    &lt;Param name="outputdir" value="/home/ev/"/&gt; 
+
+    &lt;!-- Allows to specify a regular expression, and any URL not matching will not be included --&gt;
+    &lt;Param name="exclude" value="Murcia"/&gt;    
+
+    &lt;!-- Allows to zip the Sitemap file --&gt;
+    &lt;Param name="gzip" value="no"/&gt; 
+
+&lt;/Sitemap4rdf>
+</pre>
+
+<h2 id="sparqlquery">SPARQL Query</h2>
+<p>The SPARQL query which is actually running on the enpoint:</p>
+<pre>
+SELECT DISTINCT ?n
+WHERE { ?n a [] . 
+	FILTER (REGEX(STR(?n), "http://geo.linkeddata.es/" )) .  
+} 
+</pre>
+<p>where <i>http://geo.linkeddata.es/</i> is the uriPrefix</p>
+<h2><a name="support" id="support"></a>Support and feedback</h2>
+
+<p>You can contact the authors via email:<br/>
+  <a href="mailto:richard.cyganiak at deri.org">Richard Cyganiak</a><br/>
+  <a href="mailto:bvillazon at isoco.com">Boris Villazon-Terrazas</a><br/>
+  <a href="mailto:agonzalez at isoco.com">Almudena González Guimeráns</a>
+</p>
+
+
+<h2 id="development">License, source code and development</h2>
+<p><strong>License:</strong> This tool is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.</p>
+
+<p><strong>Source Code:</strong> The latest source code is available from the project's <a href="https://github.com/boricles/sitemap4rdf">github repository</a>.</p>
+
+<p><a href="https://github.com/boricles/sitemap4rdf"><img src="img/github_logo.png" class="with-border" style="padding: 3px;" width="100"></a></p>
+</div>
+
+</body>
+</html>
